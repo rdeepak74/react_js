@@ -5,14 +5,29 @@ import './App.css'
 
 function App() {
   // let counter =15;
-  let [counter,setCounter]= useState(15);
+  const [counter,setCounter]= useState(15);
 
   const AddCount =()=>{
     // console.log("hello",Math.random());
     // counter=counter+1;
     // console.log(counter);
-    if(counter<20){
-      setCounter(counter+1);
+    if(counter<20){ // We are stoping
+
+      // This will not update state in ui
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+      // setCounter(counter+1);
+
+
+      // Set method use callback function that's why it update the state
+      setCounter((prevCounter)=> prevCounter+1);
+      setCounter((prevCounter)=> prevCounter+1);
+      setCounter((prevCounter)=> prevCounter+1);
+      setCounter((prevCounter)=> prevCounter+1);
+      setCounter((prevCounter)=> prevCounter+1);
+
     }
     
   };
@@ -28,8 +43,8 @@ function App() {
     <>
       <h1>Counter project</h1>
       <p>Count value :- {counter} </p>
-      <button onClick={AddCount}>Add Count</button> &nbsp;
-      <button onClick={RemoveCount}>Remove Count</button>
+      <button onClick={AddCount}>Add Count {counter} </button> &nbsp;
+      <button onClick={RemoveCount}>Remove Count {counter} </button>
     </>
   )
 }
